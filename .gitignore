@@ -1,5 +1,12 @@
-# Exclude
-ImmediateEdgeLegal/
+# macOS
 .DS_Store
-*.png
-README.md
+
+# Xcode
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+DerivedData/
+build/
+
+# Local
+ImmediateEdgeLegal/
