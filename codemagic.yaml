@@ -8,6 +8,7 @@ workflows:
       app_store_connect: Codemagic
 
     environment:
+      xcode: latest
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.immediateedge.edgeimme.speedreadingimmed
@@ -15,7 +16,6 @@ workflows:
         XCODE_PROJECT: "Immediate Edge - Speed Reading.xcodeproj"
         XCODE_SCHEME: "ImmediateEdgeApp"
         BUNDLE_ID: "com.immediateedge.edgeimme.speedreadingimmed"
-      xcode: latest
 
     scripts:
       - name: Fetch signing files
