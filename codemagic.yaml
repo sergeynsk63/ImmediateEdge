@@ -9,6 +9,10 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.immediateedge.edgeimme.speedreadingimmed
+        provisioning_profiles:
+          - Provisioning Profile 1
+        certificates:
+          - Code signing certificate 1
       vars:
         XCODE_PROJECT: "Immediate Edge - Speed Reading.xcodeproj"
         XCODE_SCHEME: "ImmediateEdgeApp"
