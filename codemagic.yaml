@@ -30,7 +30,13 @@ workflows:
           NEW_BUILD=$((LATEST_BUILD + 1))
           echo "Latest TestFlight build: $LATEST_BUILD"
           echo "Setting new build number: $NEW_BUILD"
-          agvtool new-version -all "$NEW_BUILD"
+
+          # Update CURRENT_PROJECT_VERSION in project.pbxproj
+          sed -i '' "s/CURRENT_PROJECT_VERSION = [0-9]*;/CURRENT_PROJECT_VERSION = $NEW_BUILD;/g" "$CM_BUILD_DIR/$XCODE_PROJECT/project.pbxproj"
+
+          # Verify the change
+          grep "CURRENT_PROJECT_VERSION" "$CM_BUILD_DIR/$XCODE_PROJECT/project.pbxproj"
+          echo "Build number updated to $NEW_BUILD"
       - name: Build IPA
         script: |
           xcode-project build-ipa \
