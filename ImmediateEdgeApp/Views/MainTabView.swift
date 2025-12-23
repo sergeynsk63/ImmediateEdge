@@ -39,10 +39,10 @@ struct MainTabView: View {
                 }
                 .tag(3)
 
-            // Profile Tab
+            // Results Tab
             ProfileView()
                 .tabItem {
-                    Label("navProfile".localized, systemImage: "person.fill")
+                    Label("navResults".localized, systemImage: "trophy.fill")
                 }
                 .tag(4)
         }

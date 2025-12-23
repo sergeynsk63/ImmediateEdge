@@ -82,6 +82,13 @@ class ProfileViewModel: ObservableObject {
         UserDefaults.standard.currentUserId = nil
     }
 
+    func deleteAllData() {
+        // Delete all training sessions and user data
+        dataManager.deleteAllData()
+        UserDefaults.standard.hasCompletedOnboarding = false
+        UserDefaults.standard.currentUserId = nil
+    }
+
     // MARK: - Computed Properties
     var username: String {
         userProfile?.username ?? "Reader"

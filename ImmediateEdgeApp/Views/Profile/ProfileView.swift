@@ -14,6 +14,7 @@ struct ProfileView: View {
     @State private var showingShareSheet = false
     @State private var showingPrivacyPolicy = false
     @State private var showingTermsOfService = false
+    @State private var showingDeleteConfirmation = false
 
     var body: some View {
         NavigationView {
@@ -114,11 +115,27 @@ struct ProfileView: View {
                         }
                     }
                     .padding(.top, DesignSystem.Spacing.medium)
+
+                    // Delete Data Button
+                    Button(action: { showingDeleteConfirmation = true }) {
+                        HStack {
+                            Image(systemName: "trash.fill")
+                                .font(.system(size: 16, weight: .semibold))
+                            Text("deleteDataButton".localized)
+                                .font(.system(size: DesignSystem.Typography.headline, weight: .semibold))
+                        }
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .background(DesignSystem.Colors.error)
+                        .cornerRadius(DesignSystem.CornerRadius.medium)
+                    }
+                    .padding(.horizontal)
                     .padding(.bottom, DesignSystem.Spacing.extraLarge)
                 }
             }
             .background(DesignSystem.Colors.background.ignoresSafeArea())
-            .navigationTitle("profileTitle".localized)
+            .navigationTitle("resultsTitle".localized)
             .sheet(isPresented: $showingPrivacyPolicy) {
                 WebViewSheet(
                     url: URL(string: AppConstants.privacyPolicyURL)!,
@@ -130,6 +147,14 @@ struct ProfileView: View {
                     url: URL(string: AppConstants.termsOfServiceURL)!,
                     title: "Terms of Service"
                 )
+            }
+            .alert("deleteDataTitle".localized, isPresented: $showingDeleteConfirmation) {
+                Button("buttonCancel".localized, role: .cancel) { }
+                Button("buttonDelete".localized, role: .destructive) {
+                    viewModel.deleteAllData()
+                }
+            } message: {
+                Text("deleteDataMessage".localized)
             }
         }
     }

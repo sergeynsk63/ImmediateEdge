@@ -15,3 +15,19 @@
 "tab.progress" = "Fortschritt";
 "tab.library" = "Bibliothek";
 "tab.profile" = "Profil";
+
+/* Navigation */
+"navHome" = "Start";
+"navTrain" = "Training";
+"navProgress" = "Fortschritt";
+"navLibrary" = "Bibliothek";
+"navProfile" = "Profil";
+"navResults" = "Ergebnisse";
+
+/* Delete Data */
+"deleteDataButton" = "Ihre Ergebnisse löschen";
+"deleteDataTitle" = "Alle Daten löschen?";
+"deleteDataMessage" = "Dadurch werden alle Ihre Trainingsergebnisse, Statistiken und Profildaten dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.";
+"resultsTitle" = "Ergebnisse";
+"buttonCancel" = "Abbrechen";
+"buttonDelete" = "Löschen";

@@ -68,6 +68,13 @@
 "navProgress" = "Progress";
 "navLibrary" = "Library";
 "navProfile" = "Profile";
+"navResults" = "Results";
+
+/* MARK: - Delete Data */
+"deleteDataButton" = "Delete Your Results";
+"deleteDataTitle" = "Delete All Data?";
+"deleteDataMessage" = "This will permanently delete all your training results, statistics, and profile data. This action cannot be undone.";
+"resultsTitle" = "Results";
 
 /* MARK: - Training Selection */
 "trainingSelectionTitle" = "Choose Your Power-Up";

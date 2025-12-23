@@ -200,4 +200,31 @@ class DataManager: ObservableObject {
             settings: settings
         )
     }
+
+    // MARK: - Delete All Data
+    func deleteAllData() {
+        // Delete all training sessions
+        let sessionRequest = TrainingSessionEntity.fetchRequest()
+        do {
+            let sessions = try context.fetch(sessionRequest)
+            for session in sessions {
+                context.delete(session)
+            }
+        } catch {
+            print("Error deleting training sessions: \(error)")
+        }
+
+        // Delete all user profiles
+        let profileRequest = UserProfileEntity.fetchRequest()
+        do {
+            let profiles = try context.fetch(profileRequest)
+            for profile in profiles {
+                context.delete(profile)
+            }
+        } catch {
+            print("Error deleting user profiles: \(error)")
+        }
+
+        save()
+    }
 }
