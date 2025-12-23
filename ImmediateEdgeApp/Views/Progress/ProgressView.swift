@@ -21,6 +21,7 @@ struct ProgressView: View {
             }
             .navigationTitle("statisticsTitle".localized)
         }
+        .navigationViewStyle(.stack)
     }
 }
 

@@ -47,6 +47,7 @@ struct TrainingSelectionView: View {
             }
             .navigationTitle("trainingSelectionTitle".localized)
         }
+        .navigationViewStyle(.stack)
     }
 }
 

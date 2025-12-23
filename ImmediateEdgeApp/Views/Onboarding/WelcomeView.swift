@@ -89,6 +89,7 @@ struct WelcomeView: View {
                 LanguageManager.shared.setupInitialLanguage()
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

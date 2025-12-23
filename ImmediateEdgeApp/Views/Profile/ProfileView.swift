@@ -157,6 +157,7 @@ struct ProfileView: View {
                 Text("deleteDataMessage".localized)
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

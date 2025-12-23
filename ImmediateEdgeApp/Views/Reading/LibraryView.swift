@@ -53,6 +53,7 @@ struct LibraryView: View {
                 applyFilters()
             }
         }
+        .navigationViewStyle(.stack)
     }
 
     private func applyFilters() {
